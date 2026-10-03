@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Phoenix Shop</title>
+
+    <link rel="stylesheet" href="test gpt.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            phoenix <span>Shop</span>
+        </div>
+
+        <nav>
+            <a href="#">صفحه اصلی</a>
+            <a href="#products">پرطرفدار</a>
+            <a href="#categories">محصولات</a>
+            <a href="#faq">سوالات</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="search-btn">🔍</button>
+
+            <button class="cart-btn" onclick="openCart()">
+                🛒
+                <span id="cart-count">0</span>
+            </button>
+
+            <button class="login-btn">
+                Login
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-small"> ✨ STORE</p>
+
+            <h1>
+                Everything you need<br>
+                <span>Plato Items</span>
+            </h1>
+
+            <p class="hero-description">
+                quickly and easily.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#categories" class="primary-btn">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-placeholder">
+                <img src="pl icon.png">
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+
+        <div class="section-heading">
+
+            <div class="section-title">
+                <p>CHECK OUT</p>
+                <h2>پرفروش ها</h2>
+            </div>
+
+        </div>
+
+        <div class="products-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <span class="badge">POPULAR</span>
+
+                    <div class="image-placeholder">
+                        <img src="vip.png" style="width: 120xp ; height: 120px ;">
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Plato
+                    </p>
+
+                    <h3>Gold Star</h3>
+
+                    <div class="product-bottom">
+
+                        <strong>400,000 t</strong>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('Gold Star', 400000)">
+                            +
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <div class="image-placeholder">
+                        <img src="pip.png" style="width: 100xp ; height: 100px ;">
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">Plato</p>
+
+                    <h3>10 Pips</h3>
+
+                    <div class="product-bottom">
+
+                        <strong>180,000 t</strong>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart('10 Pips', 180000)">
+                            +
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <div class="image-placeholder">
+                        🆔
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">Plato</p>
+
+                    <h3>Special ID</h3>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            500,000 , more..
+                        </strong>
+
+                        <button
+                            class="view-cart" ><a href="prod.html">
+                            View All →</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+
+        <div class="section-title">
+            <p>خرید</p>
+            <h2>محصولات</h2>
+        </div>
+
+        <div class="categories">
+
+            <div class="category-card" onclick="openPip()">
+                <div class="category-icon"><img src="pip.png" style="width: 40xp ; height: 100px ;"></div>
+                <h2>Pips</h2>
+                <p> آیتم پیپ </p>
+            </div>
+                <div class="pip-popup" id="pipPopup">
+                    <div class="pip-box">
+                        <button class="close-btn" onclick="closePip()">×</button>
+                    <img src="pip.png" style="width: 40xp ; height: 100px ;">
+                    <h2>Pips</h2>
+                    <p>10 پیپ</p>
+                    <p>قیمت: t180.000</p>
+                    <p>شارژ / ایتم</p>
+                    <button class="add-cart" onclick="addToCart('10 Pips', 180000)"> + </button>
+                    </div>
+                </div>
+<!----------------------------------------------------------------------------------------------------------------->
+            <div class="category-card" onclick="openCoin()">
+                <div class="category-icon"><img src="coin.png" style="width: 125px ; height: 85px ;"></div>
+                <h2>Coins</h2>
+                <p>آیتم سکه</p>
+            </div>
+                <div class="coin-popup" id="coinPopup">
+                    <div class="coin-box">
+                        <button class="close-btn" onclick="closeCoin()">×</button>
+                    <img src="coin.png" style="width: 125px ; height: 85px ;">
+                    <h2>Coins</h2>
+                    <p>1000 سکه</p>
+                    <p>قیمت: t180.000 شارژ</p>
+                    <p>t40.000 ایتم</p>
+                    <button class="add-cart" onclick="addToCart('1000 Coins', 180000)"> + </button>
+                    </div>
+                </div>
+<!----------------------------------------------------------------------------------------------------------------->
+            <div class="category-card" onclick="openVip()">
+                <div class="category-icon"><img src="vip.png" style="width: 50xp ; height: 100px ;"></div>
+                <h2>Gold Star</h2>
+                <p> ویپ گلد استار </p>
+            </div>
+                <div class="vip-popup" id="vipPopup">
+                    <div class="vip-box">
+                        <button class="close-btn" onclick="closeVip()">×</button>
+                    <img src="vip.png" style="width: 50xp ; height: 100px ;">
+                    <h2>Gold Star</h2>
+                    <p>10.000 سکه</p>
+                    <p>قیمت: t400.000 </p>
+                    <p>ایتم</p>
+                    <button class="add-cart" onclick="addToCart('1 Gold Star', 400000)"> + </button>
+                    </div>
+                </div>
+<!----------------------------------------------------------------------------------------------------------------->
+            <div class="category-card" onclick="openOgVip()">
+                <div class="category-icon"><img src="ogvip.png" style="width: 40xp ; height: 80px ;"></div>
+                <h2>OG Gold Star</h2>
+                <p> og گلد</p>
+            </div>
+                <div class="ogvip-popup" id="ogvipPopup">
+                    <div class="ogvip-box">
+                        <button class="close-btn" onclick="closeOgVip()">×</button>
+                    <img src="ogvip.png" style="width: 40xp ; height: 80px ;">
+                    <h2>OG Gold Star</h2>
+                    <p>10.000 سکه</p>
+                    <p>قیمت: t400.000</p>
+                    <p>ایتم</p>
+                    <button class="add-cart" onclick="addToCart('1 Og GS', 400000)"> + </button>
+                    </div>
+                </div>
+<!----------------------------------------------------------------------------------------------------------------->
+            <div class="category-card" onclick="openChP()">
+                <div class="category-icon"><img src="chtpas.png" style="width: 40xp ; height: 100px ;"></div>
+                <h2>Chat Pass</h2>
+                <p>چت پس روم</p>
+            </div>
+                <div class="chp-popup" id="chpPopup">
+                    <div class="chp-box">
+                        <button class="close-btn" onclick="closeChP()">×</button>
+                    <img src="chtpas.png" style="width: 40xp ; height: 100px ;">
+                    <h2>Chat Pass</h2>
+                    <p>5000 سکه</p>
+                    <p>قیمت: t200.000</p>
+                    <p>ایتم</p>
+                    <button class="add-cart" onclick="addToCart('1 Chat Pass', 200000)"> + </button>
+                    </div>
+                </div>
+<!----------------------------------------------------------------------------------------------------------------->
+            <div class="category-card" ><a href="prod.html">
+                <div class="category-icon">🆔</div>
+                <h2>IDs</h2>
+                <p>آیدی 3 و 4 حرفی</p><br>
+                <p> View All →</p></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="features">
+
+        <div class="feature">
+            <span>💬</span>
+            <h3>Support</h3>
+            <p>We're here when you need us</p><br>
+            <a href ="http://t.me/P_4_N_I"><h3>Telegram</h3></a>
+        </div>
+
+        <div class="feature">
+            <span>⚡</span>
+            <h3>Fast Delivery</h3>
+            <p>Quick order processing</p>
+        </div>
+
+        <div class="feature">
+            <span>🔒</span>
+            <h3>Secure</h3>
+            <p>Safe and reliable shopping</p>
+        </div>
+
+        <div class="feature">
+            <span>🎁</span>
+            <h3>Special Offers</h3>
+            <p>Regular discounts and bundles</p>
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq">
+
+        <div class="section-title">
+            <p>NEED HELP?</p>
+            <h2>info</h2>
+        </div>
+
+        <div class="faq">
+
+            <details>
+                <summary>How do I receive my order?</summary>
+
+                <p>
+                    After ur payment is confirmed,
+                    ur order will be processed and delivered
+                    to ur acc.
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    How long does delivery take?
+                </summary>
+
+                <p>
+                    Delivery time depends on the product
+                    and current order queue.
+                </p>
+            </details>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            PhoenixShop
+        </div>
+
+        <p>Your Plato items store.</p>
+
+        <div class="footer-links">
+            <a href="#">Telegram</a>
+            <a href="#">Discord</a>
+            <a href="#">Else</a>
+        </div>
+
+        <small>© 2026 PhoenixShop |PHGH</small>
+
+    </footer>
+
+    <div class="cart-popup" id="cartPopup">
+    <div class="cart-box">
+
+        <button class="close-btn" onclick="closeCart()">×</button>
+
+        <h2>🛒 سبد خرید</h2>
+
+        <div id="cartItems"></div>
+
+        <h3> مجموع: <span id="totalPrice">0 تومان</span> </h3>
+        <button class="checkout-btn" onclick="checkout()">ثبت سفارش</button>    </div>
+</div>
+<script src="script..js gpt.js"></script>
+
+</body>
+</html>

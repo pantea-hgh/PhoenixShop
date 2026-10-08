@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const db = new Database("shop.db");
 
 db.prepare(`
     CREATE TABLE IF NOT EXISTS orders (
